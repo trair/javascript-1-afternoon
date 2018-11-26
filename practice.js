@@ -6,7 +6,7 @@
 //plus the value of the name parameter.
 
 function greeting(name){
-  return "Hello, " + name
+  return `Hello, ${name}`
 }
 
 //////////////////PROBLEM 2////////////////////
@@ -14,8 +14,8 @@ function greeting(name){
 //Rewrite the function greeting as a function expression.
 //Name it newGreeting.
 
-var newGreeting = function(name){
-  return "Hello, " + name
+let newGreeting = function(name){
+  return `Hello, ${name}`
 }
 
 //////////////////PROBLEM 3////////////////////
@@ -23,8 +23,9 @@ var newGreeting = function(name){
 //Rewrite the function greeting as an arrow function.
 //Name it finalGreeting.
 
-var finalGreeting = name => "Hello, " + name
-
+let finalGreeting = name => {
+  return `Hello, ${name}`
+}
 //////////////////PROBLEM 4////////////////////
 
 //Create an array called groceries with the values
@@ -38,11 +39,23 @@ let groceries = ["apples", "milk", "eggs", "bread"]
 //If the array does not contain "chocolate", add "chocolate".
 //doubleCheck should return the array.
 
+// function doubleCheck(arr){
+//   if(arr.includes("chocolate")==false){
+//     arr.push("chocolate")
+//     return arr
+//   }
+// }
 function doubleCheck(arr){
-  if(arr.includes("chocolate")==false){
-    arr.push("chocolate")
-    return arr
+  let returnsChocolate = false
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == "chocolate") {
+      returnsChocolate = true
+    }
   }
+  if (returnsChocolate === false){
+    arr.push("chocolate")
+  }
+  return arr
 }
 
 //////////////////PROBLEM 5////////////////////
@@ -89,7 +102,7 @@ let ruff = dog.bark()
 function looper(arr){
   let mySum = 0
   for(let i = 0; i<arr.length; i++){
-    if(arr[i]>=100 || (arr[i]%2==1)){
+    if(arr[i] >= 100 || (arr[i] %2 == 1)){
       mySum+=arr[i]
     }
   }
