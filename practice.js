@@ -184,11 +184,10 @@ let pondScope = ["duck", "realDuck"];
 //Create a function called outerFn which returns an anonymous
 //function which returns your name.
 
-let outerFn = function(){
-  let func = function(){
+function outerFn(){
+  return function(){
     return "Jonathan"
   }
-  return func
 }
 
 //Now save the result of invoking outerFn into a variable called innerFn.
